@@ -16,6 +16,14 @@ html {
 	background-image: url('../img/nightsky.jpg');
 	background-repeat: no-repeat;
 	background-size: 120% auto;
+
+	animation: animatedBackground 40s linear infinite;
+}
+
+@keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	50% { background-position: 100% 0; }
+	100% { background-position: 0 0; }
 }
 
 body { 
@@ -182,6 +190,151 @@ header h1 {
 	width: calc(100% - 150px);
 	margin: 0 auto; 
 	min-height: 200px;
-	border: 5px solid red;
 	margin-top: 50px;
+	position: relative;
+}
+
+/********************************************/
+/* 		CSS for amount pages				*/
+/********************************************/
+
+.amount h1:nth-child(1){
+	font-size: 2rem;
+	text-decoration: underline;
+	margin-bottom: 20px;
+}
+
+.amount ul {
+	width: 530px;
+	list-style: none;
+	display: block;
+}
+
+.amount ul li {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 5px solid transparent;
+	background-color: #BCCBCE;
+	display: inline-block;
+	margin: 0 30px 30px 0;
+	text-align: center;
+	line-height: 140px;
+	font-size: 2rem;
+}
+
+.amount ul a:nth-child(3) li, .amount ul a:nth-child(6) li{
+    margin-right: 0;
+}
+
+.amount ul a:nth-child(n+4) li {
+    margin-bottom: 0;
+}
+
+.amount ul li:hover {
+	border-color: white;
+}
+
+.amount ul li a:target {
+	border-color: white;
+}
+
+.amount .result {
+	position: absolute;
+	right: 0;
+	top: 70px;
+	height: 220px;
+	width: 250px;
+}
+
+.amount .result p{
+	padding-top: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	position: absolute;
+	font-size: 1.6rem;
+	background-color: #BCCBCE;
+	height: 0px;
+	overflow: hidden;
+	z-index: 3;
+	transition: all 1s ease-out;
+}
+
+#age1:target {
+	padding-top: 20px;
+	height: 100%;
+}
+
+#age1:target #button1{
+	border-color: white;
+}
+
+#age2:target {
+	padding-top: 20px;
+	height: 100%;
+}
+
+#age3:target {
+	padding-top: 20px;
+	height: 100%;
+}
+
+#age4:target {
+	padding-top: 20px;
+	height: 100%;
+}
+
+#age5:target {
+	padding-top: 20px;
+	height: 100%;
+}
+
+#age6:target {
+	padding-top: 20px;
+	height: 100%;
+}
+
+.amount .result p span, .amount .result p a{
+	display: block;
+}
+
+.amount .result p span{
+	font-size: 4rem;
+}
+
+.amount .result p a {
+	padding-right: 30px;
+	text-align: right;
+	text-decoration: underline;
+}
+
+.amount .tips {
+	position: absolute;
+	right: 0;
+	top: 70px;
+	height: 300px;
+	width: 250px;
+	background-color: #BCCBCE;
+	overflow: hidden;
+	height: 0;
+	z-index: 2;
+	transition: all 1s ease-out;
+	transition-delay: 0.8s;
+}
+
+#agetip:target {
+ 	height: 350px;
+}
+
+.tips h3 {
+	text-align: center;
+	margin-top: 10px;
+	font-size: 1.4rem;
+	text-decoration: underline;
+}
+
+.tips ol {
+	margin-left: 35px;
+	width: 80%;
 }
