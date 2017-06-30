@@ -28,18 +28,17 @@ a {
 	text-decoration: none;
 }
 
-/********************************************/
-/* 			Frontpage CSS rules 			*/
-/********************************************/
-
 .main {
 	width: 978px;
 	position: relative;
 	min-height: 700px;
 	margin: 0 auto;
-	border: 5px solid red;
 	border-top: none;
 }
+
+/********************************************/
+/* 			Frontpage CSS rules 			*/
+/********************************************/
 
 .main-info-left {
 	width: 60%;
@@ -179,3 +178,10 @@ header h1 {
 	margin-bottom: 10px;
 }
 
+.main-section {
+	width: calc(100% - 150px);
+	margin: 0 auto; 
+	min-height: 200px;
+	border: 5px solid red;
+	margin-top: 50px;
+}
