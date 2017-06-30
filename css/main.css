@@ -29,6 +29,8 @@ a {
 	position: relative;
 	min-height: 700px;
 	margin: 0 auto;
+	border: 5px solid red;
+	border-top: none;
 }
 
 .main-info-left {
