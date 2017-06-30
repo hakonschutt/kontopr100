@@ -124,15 +124,31 @@ audio {
 	text-align: center;
 	font-size: 1.2rem;
 	border-radius: 15px;
+	position: relative;
 }
 
-.front-page-nav ul li img {
+.front-page-nav ul li img:nth-child(2) {
 	width: 150px;
 	height: auto;
 	display: block;
 	margin: 0px auto 5px auto;
 	padding-top: 10px;
 }
+
+.stars {
+	width: 40px;
+	height: auto;
+	position: absolute;
+	right: -20px;
+	top: -20px;
+	display: none;
+}
+
+.front-page-nav ul li:hover .stars {
+	display: inline-block;
+}
+
+
 
 /********************************************/
 /* 		GENERAL CSS for other pages			*/
