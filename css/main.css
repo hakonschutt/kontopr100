@@ -13,11 +13,12 @@
 html {
 	min-width: 100vw; 
 	min-height: 100vh;
+	overflow: hidden;
 	background-image: url('../img/nightsky.jpg');
 	background-repeat: no-repeat;
 	background-size: 120% auto;
 
-	animation: animatedBackground 40s linear infinite;
+	animation: animatedBackground 60s linear infinite;
 }
 
 @keyframes animatedBackground {
@@ -52,12 +53,16 @@ a {
 	width: 60%;
 	left: 0; 
 	display: inline-block;
+	position: relative;
 }
 
 .main-info-left img {
 	width: 50%;
+	position: absolute;
 	height: auto;
-	margin: 0 25%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 	margin-top: 100px;
 }
 
@@ -66,11 +71,12 @@ a {
 	width: 60%;
 	margin: 0 20%;
 	text-align: center;
+	overflow: hidden;
 }
 
 .main-info-left h1 {
 	font-size: 2rem;
-	margin-top: 25px;
+	margin-top: 350px;
 	margin-bottom: 15px;
 }
 
@@ -78,10 +84,18 @@ a {
 	width: 25%;
 	height: 550px;
 	float: right;
-	/*top: -700px;*/
+	top: -700px;
 	display: inline-block;
 	border-left: 10px solid #BCCBCE;
 	position: relative;
+
+	animation: navappear 4s linear;
+	animation-fill-mode: forwards; 
+}
+
+@keyframes navappear {
+	from { top: -700px; }
+	to { top: -10px; }
 }
 
 .front-page-nav ul {
@@ -125,11 +139,20 @@ a {
 .wrap-tilbake {
 	width: 100px;
 	height: 40px;
-	top: -10px;
+	top: -75px;
 	border: 5px solid #BCCBCE;
 	left: 100px;
 	position: relative;
 	display: inline-block;
+
+	animation: backappear 1s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 1s;
+}
+
+@keyframes backappear {
+	from { top: -75px; }
+	to { top: -10px; }
 }
 
 .tilbake {
@@ -151,8 +174,16 @@ a {
 	border: 5px solid #BCCBCE;
 	float: right;
 	position: relative;
-	top: -10px;
+	top: -300px;
 	right: 125px;
+
+	animation: itemapear 2s linear;
+	animation-fill-mode: forwards; 
+}
+
+@keyframes itemapear {
+	from { top: -300px; }
+	to { top: -10px; }
 }
 
 .menu-display {
