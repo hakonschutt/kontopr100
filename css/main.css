@@ -223,6 +223,7 @@ header h1 {
 	min-height: 200px;
 	margin-top: 50px;
 	position: relative;
+	border: 2px solid red;
 }
 
 /********************************************/
@@ -369,3 +370,68 @@ header h1 {
 	margin-left: 35px;
 	width: 80%;
 }
+
+/********************************************/
+/* 			CSS for game pages				*/
+/********************************************/
+
+.game {
+	width: 70%;
+	background-color: white;
+	height: 400px;
+	display: inline-block;
+}
+
+.game-guess {
+	width: 25%;
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	right: 0;
+	text-align: center;
+}
+
+.game-guess h1 {
+	font-size: 1.6rem;
+	margin-bottom: 10px;
+}
+
+.game-guess ul {
+	list-style: none;
+}
+
+.game-guess ul li{
+	font-size: 1.5rem;
+	padding: 5px;
+	margin: 10px 0;
+	border: 2px solid white;
+	border-radius: 15px;
+}
+
+.game-guess ul li:hover{
+	background-color: white;
+	color: #BCCBCE;
+}
+
+/********************************************/
+/* 			CSS for story pages				*/
+/********************************************/
+
+.story {
+	width: 70%;
+	background-color: white;
+	height: 400px;
+	display: inline-block;
+}
+
+.story-text {
+	width: 25%;
+	position: absolute;
+	display: inline-block;
+	height: 400px;
+	background-color: red;
+	top: 0;
+	right: 0;
+	text-align: center;
+}
+
