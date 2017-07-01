@@ -13,7 +13,7 @@
 html {
 	min-width: 100vw; 
 	min-height: 100vh;
-	overflow: hidden;
+	overflow-x: hidden;
 	background-image: url('../img/nightsky.jpg');
 	background-repeat: no-repeat;
 	background-size: 120% auto;
@@ -400,7 +400,7 @@ header h1 {
 
 .game {
 	width: 580px;
-	background-color: #BCCBCE;
+	background-color: #69DAFF;
 	height: 400px;
 	display: inline-block;
 	overflow: hidden;
@@ -410,6 +410,11 @@ header h1 {
 
 .game:hover .game-opacity {
 	top: -400px;
+}
+
+.game:hover {
+	transition: all 25s ease-out;
+	background-color: #180c2f;
 }
 
 .game-opacity {
@@ -471,135 +476,261 @@ header h1 {
 	top: 0px;
 }
 
-#game-bed {
-	height: auto;
-	width: 100px;
+#fence {
 	position: absolute;
-	left: 230px;
-	top: 150px;
+	bottom: 40px;
+	width: 150%;
+	height: auto;
+	z-index: 5;
+}
+
+#ground {
+    position: absolute; 
+    height: 150px;
+    width: 100%; 
+    background-color: #00aa34;
+    bottom: 0; 
+    z-index: 3; 
+}
+
+.game:hover #ground{
+	transition: all 25s ease-out;
+	background-color: #003200;
+}
+
+#moon {
+	position: absolute;   
+	/*top: -25px;
+	left: 50px; */
+	top: 250px;
+	left: -100px;
+	height: 100px;
+	width: 100px;
+	border-radius: 175px;
+	background: #E1E1D6;
+	z-index: 1;
+}
+
+.game:hover #moon{
+	animation: moonup 10s linear;
+	animation-fill-mode: forwards;
+	animation-delay: 6s; 
+}
+
+@keyframes moonup {
+    from {top: 250px; left: -100px; height: 100px; width: 100px;}
+    to {top: -25px; left: 50px; height: 125px; width: 125px;}
+}
+
+#sun {
+	position: absolute;   
+	top: -50px;
+	left: 350px; 
+	height: 150px;
+	width: 150px;
+	border-radius: 175px;
+	background: #FFF97B;
+	z-index: 1;
+}            
+
+.game:hover #sun{
+	animation: solnedgang 10s linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes solnedgang {
+    from {top: -50px; left: 350px; background-color: #FFF97B; width: 150px; height: 150px;}
+    to {top: 250px; left: 550px; background-color: #B2B200; width: 100px; height: 100px;}
+}
+
+.cloud {   
+    background: #FFF;
+    width: 140px;
+    height: 45px;
+    border-radius: 35px;
+    position: absolute;
+}
+
+.game:hover #cloud1 {
+	transition: all 13s ease-out;
+	opacity: 0;
+}
+
+.game:hover #cloud2 {
+	transition: all 13s ease-out;
+	opacity: 0;
+}
+        
+.circle1 {
+    height: 60px;
+    width: 60px;
+    background: #FFF;
+    border-radius: 35px;
+    position: absolute;
+    left: 15px;
+    bottom: 3px;
+}
+        
+.circle2 {
+    height: 70px;
+    width: 70px;
+    background: #FFF;
+    border-radius: 50px;
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+}
+        
+#cloud1 {
+    left: 100px;
+    top: 120px;
+    -webkit-animation: sky1 15s infinite; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+    opacity: 0.8; 
+}
+        
+@-webkit-keyframes sky1 {
+    from {left: 150px;}
+    to {left: 70px;}
+}           
+
+#cloud2 {
+    left: 370px;
+    top: 70px;
+    transform: scale(1.5);
+    z-index: 8;
+    -webkit-animation: sky2 35s infinite; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+    opacity: 0.8; 
+    
+}
+@-webkit-keyframes sky2 {
+    from {left: 300px;}
+    to {left: 470px;}
 }
 
 .game-sheep {
 	height: 400px;
 	width: auto;
-	top: -100px;
+	top: -120px;
 	right: -200px;
 	position: absolute;
+	z-index: 4;
 }
 
 .game:hover #sheep1 {
-	animation: sheepmoveone 5s linear;
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
 }
 
 .game:hover #sheep2 {
-	animation: sheepmoveone 5s linear;
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
-	animation-delay: 2s;
+	animation-delay: 1s;
 }
 
 .game:hover #sheep3 {
-	animation: sheepmoveone 5s linear;
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
-	animation-delay: 4s;
+	animation-delay: 3s;
 }
 
 .game:hover #sheep4 {
-	animation: sheepmoveone 5s linear;
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
-	animation-delay: 7s;
+	animation-delay: 5s;
 }
 
 .game:hover #sheep5 {
-	animation: sheepmoveone 5s linear;
+	animation: sheepmoveone 4s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 6s;
+}
+
+.game:hover #sheep6 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 9s;
 }
 
-.game:hover #sheep6 {
-	animation: sheepmoveone 5s linear;
+.game:hover #sheep7 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
-	animation-delay: 13s;
+	animation-delay: 10s;
 }
 
-.game:hover #sheep7 {
-	animation: sheepmoveone 5s linear;
+.game:hover #sheep8 {
+	animation: sheepmoveone 4s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 12s;
+}
+
+.game:hover #sheep9 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 14s;
 }
 
-.game:hover #sheep8 {
-	animation: sheepmoveone 5s linear;
+.game:hover #sheep10 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 16s;
 }
 
-.game:hover #sheep9 {
-	animation: sheepmoveone 5s linear;
+.game:hover #sheep11 {
+	animation: sheepmoveone 4s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 18s;
+}
+
+.game:hover #sheep12 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 19s;
 }
 
-.game:hover #sheep10 {
-	animation: sheepmoveone 5s linear;
+.game:hover #sheep13 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 22s;
 }
 
-.game:hover #sheep11 {
-	animation: sheepmoveone 5s linear;
+.game:hover #sheep14 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 24s;
 }
 
-.game:hover #sheep12 {
-	animation: sheepmoveone 5s linear;
+.game:hover #sheep15 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
-	animation-delay: 26s;
+	animation-delay: 25s;
 }
 
-.game:hover #sheep13 {
-	animation: sheepmoveone 5s linear;
+.game:hover #sheep16 {
+	animation: sheepmoveone 4s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 27s;
+}
+
+.game:hover #sheep17 {
+	animation: sheepmoveone 4s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 29s;
 }
 
-.game:hover #sheep14 {
-	animation: sheepmoveone 5s linear;
-	animation-fill-mode: forwards; 
-	animation-delay: 32s;
-}
-
-.game:hover #sheep15 {
-	animation: sheepmoveone 5s linear;
-	animation-fill-mode: forwards; 
-	animation-delay: 35s;
-}
-
-.game:hover #sheep16 {
-	animation: sheepmoveone 5s linear;
-	animation-fill-mode: forwards; 
-	animation-delay: 37s;
-}
-
-.game:hover #sheep17 {
-	animation: sheepmoveone 5s linear;
-	animation-fill-mode: forwards; 
-	animation-delay: 40s;
-}
-
 @keyframes sheepmoveone {
-	0% { right: -200px; top: -100px;}
-	10% { top: -90px; }
-	20% { top: -110px; }
-	30% { top: -90px; }
-	40% { top: -160px; }
-	50% { top: -170px; }
-	60% { top: -160px; }
-	70% { top: -170px; }
-	80% { top: -90px; }
-	90% { top: -110px; }
-	100% { right: 580px; }
+	0% { right: -200px; top: -65px; z-index: 4;}
+	10% { top: -55px; z-index: 4; }
+	20% { top: -65px; z-index: 4; }
+	30% { top: -55px; z-index: 4; }
+	40% { top: -120px; z-index: 4;}
+	50% { top: -125px; z-index: 6; }
+	60% { top: -10px; z-index: 6; }
+	70% { top: -15px; z-index: 6; }
+	80% { top: -5px; z-index: 6; }
+	90% { top: -15px; z-index: 6; }
+	100% { right: 580px; top: -10px;}
 }
 
 .game-guess {
