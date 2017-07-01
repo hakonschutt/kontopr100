@@ -733,6 +733,29 @@ header h1 {
 	100% { right: 580px; top: -10px;}
 }
 
+#finished {
+	font-size: 2rem;
+	display: inline-block;
+	padding: 20px 30px;
+	border: 3px solid white;
+	border-radius: 15px;
+	position: absolute;
+	top: 150px;
+	right: -350px;
+	z-index: 7;
+}
+
+.game:hover #finished {
+	animation: finished 3s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 33s;
+}
+
+@keyframes finished {
+	from {right: -350px;}
+	to {right: 130px;}
+}
+
 .game-guess {
 	width: 25%;
 	position: absolute;
