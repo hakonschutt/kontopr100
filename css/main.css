@@ -19,9 +19,16 @@ html {
 	background-size: 120% auto;
 
 	animation: animatedBackground 60s linear infinite;
+	-webkit-animation: animatedBackground 60s linear infinite;
 }
 
 @keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	50% { background-position: 100% 0; }
+	100% { background-position: 0 0; }
+}
+
+@-webkit-keyframes animatedBackground {
 	0% { background-position: 0 0; }
 	50% { background-position: 100% 0; }
 	100% { background-position: 0 0; }
@@ -73,7 +80,6 @@ audio {
 	margin-top: 100px;
 }
 
-
 .main-info-left h1, .main-info-left p {
 	width: 60%;
 	margin: 0 20%;
@@ -90,7 +96,7 @@ audio {
 .front-page-nav {
 	width: 0px;
 	height: 550px;
-	float: right;
+	margin-left: 100px;
 	top: -700px;
 	display: inline-block;
 	border-left: 10px solid #BCCBCE;
@@ -99,9 +105,16 @@ audio {
 
 	animation: navappear 4s linear;
 	animation-fill-mode: forwards; 
+	-webkit-animation: navappear 4s linear;
+	-webkit-animation-fill-mode: forwards;
 }
 
 @keyframes navappear {
+	from { top: -700px; }
+	to { top: -10px; }
+}
+
+@-webkit-keyframes navappear {
 	from { top: -700px; }
 	to { top: -10px; }
 }
@@ -148,8 +161,6 @@ audio {
 	display: inline-block;
 }
 
-
-
 /********************************************/
 /* 		GENERAL CSS for other pages			*/
 /********************************************/
@@ -172,9 +183,17 @@ audio {
 	animation: backappear 1s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 1s;
+	-webkit-animation: backappear 1s linear;
+	-webkit-animation-fill-mode: forwards; 
+	-webkit-animation-delay: 1s;
 }
 
 @keyframes backappear {
+	from { top: -75px; }
+	to { top: -10px; }
+}
+
+@-webkit-keyframes backappear {
 	from { top: -75px; }
 	to { top: -10px; }
 }
@@ -196,16 +215,22 @@ audio {
 	width: 100px;
 	height: 40px;
 	border: 5px solid #BCCBCE;
-	float: right;
-	position: relative;
+	position: absolute;
 	top: -300px;
 	right: 125px;
 
 	animation: itemapear 2s linear;
 	animation-fill-mode: forwards; 
+	-webkit-animation: itemapear 2s linear;
+	-webkit-animation-fill-mode: forwards; 
 }
 
 @keyframes itemapear {
+	from { top: -300px; }
+	to { top: -10px; }
+}
+
+@-webkit-keyframes itemapear {
 	from { top: -300px; }
 	to { top: -10px; }
 }
@@ -302,7 +327,7 @@ header h1 {
 	width: 250px;
 }
 
-.amount .result p{
+.amount .result p {
 	padding-top: 0;
 	width: 100%;
 	height: 100%;
@@ -405,7 +430,6 @@ header h1 {
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
-	box-shadow: inset 0px 0px 20px 0px rgba(0,24,72,0.75);
 }
 
 .game:hover .game-opacity {
@@ -500,8 +524,6 @@ header h1 {
 
 #moon {
 	position: absolute;   
-	/*top: -25px;
-	left: 50px; */
 	top: 250px;
 	left: -100px;
 	height: 100px;
@@ -514,10 +536,18 @@ header h1 {
 .game:hover #moon{
 	animation: moonup 10s linear;
 	animation-fill-mode: forwards;
-	animation-delay: 6s; 
+	animation-delay: 6s;
+	-webkit-animation: moonup 10s linear;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-delay: 6s;  
 }
 
 @keyframes moonup {
+    from {top: 250px; left: -100px; height: 100px; width: 100px;}
+    to {top: -25px; left: 50px; height: 125px; width: 125px;}
+}
+
+@-webkit-keyframes moonup {
     from {top: 250px; left: -100px; height: 100px; width: 100px;}
     to {top: -25px; left: 50px; height: 125px; width: 125px;}
 }
@@ -536,9 +566,16 @@ header h1 {
 .game:hover #sun{
 	animation: solnedgang 10s linear;
 	animation-fill-mode: forwards;
+	-webkit-animation: solnedgang 10s linear;
+	-webkit-animation-fill-mode: forwards;
 }
 
 @keyframes solnedgang {
+    from {top: -50px; left: 350px; background-color: #FFF97B; width: 150px; height: 150px;}
+    to {top: 250px; left: 550px; background-color: #B2B200; width: 100px; height: 100px;}
+}
+
+@-webkit-keyframes solnedgang {
     from {top: -50px; left: 350px; background-color: #FFF97B; width: 150px; height: 150px;}
     to {top: 250px; left: 550px; background-color: #B2B200; width: 100px; height: 100px;}
 }
@@ -584,26 +621,41 @@ header h1 {
 #cloud1 {
     left: 100px;
     top: 120px;
-    -webkit-animation: sky1 15s infinite; /* Chrome, Safari, Opera */
-    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
-    opacity: 0.8; 
+    opacity: 0.8;
+    animation: sky1 15s infinite;
+	animation-direction: alternate;
+	-webkit-animation: sky1 15s infinite;
+	-webkit-animation-direction: alternate; 
 }
         
+@keyframes sky1 {
+    from {left: 150px;}
+    to {left: 70px;}
+}  
+
 @-webkit-keyframes sky1 {
     from {left: 150px;}
     to {left: 70px;}
-}           
+}          
 
 #cloud2 {
     left: 370px;
     top: 70px;
     transform: scale(1.5);
     z-index: 8;
-    -webkit-animation: sky2 35s infinite; /* Chrome, Safari, Opera */
-    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
-    opacity: 0.8; 
+    opacity: 0.8;
+    animation: sky2 35s infinite;
+    animation-direction: alternate;
+    -webkit-animation: sky2 35s infinite;
+    -webkit-animation-direction: alternate; 
     
 }
+
+@keyframes sky2 {
+    from {left: 300px;}
+    to {left: 470px;}
+}
+
 @-webkit-keyframes sky2 {
     from {left: 300px;}
     to {left: 470px;}
@@ -618,108 +670,112 @@ header h1 {
 	z-index: 4;
 }
 
-.game:hover #sheep1 {
+.game:hover .game-sheep {
 	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
+	animation-fill-mode: forwards;
+
 }
 
-.game:hover #sheep2 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
+.game:hover #sheep1 {
+	animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+}
+
+.game:hover #sheep2 { 
 	animation-delay: 1s;
+	-webkit-animation-delay: 1s;
 }
 
 .game:hover #sheep3 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 3s;
+	-webkit-animation-delay: 3s;
 }
 
-.game:hover #sheep4 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
+.game:hover #sheep4 { 
 	animation-delay: 5s;
+	-webkit-animation-delay: 5s;
 }
 
-.game:hover #sheep5 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
+.game:hover #sheep5 { 
 	animation-delay: 6s;
+	-webkit-animation-delay: 6s;
 }
 
 .game:hover #sheep6 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 9s;
+	-webkit-animation-delay: 9s;
 }
 
 .game:hover #sheep7 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 10s;
+	-webkit-animation-delay: 10s;
 }
 
 .game:hover #sheep8 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 12s;
+	-webkit-animation-delay: 12s;
 }
 
 .game:hover #sheep9 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 14s;
+	-webkit-animation-delay: 14s;
 }
 
-.game:hover #sheep10 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
+.game:hover #sheep10 { 
 	animation-delay: 16s;
+	-webkit-animation-delay: 16s;
 }
 
-.game:hover #sheep11 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
+.game:hover #sheep11 { 
 	animation-delay: 18s;
+	-webkit-animation-delay: 18s;
 }
 
-.game:hover #sheep12 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
+.game:hover #sheep12 { 
 	animation-delay: 19s;
+	-webkit-animation-delay: 19s;
 }
 
 .game:hover #sheep13 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 22s;
+	-webkit-animation-delay: 22s;
 }
 
 .game:hover #sheep14 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 24s;
+	-webkit-animation-delay: 24s;
 }
 
 .game:hover #sheep15 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 25s;
+	-webkit-animation-delay: 25s;
 }
 
-.game:hover #sheep16 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
+.game:hover #sheep16 { 
 	animation-delay: 27s;
+	-webkit-animation-delay: 27s;
 }
 
 .game:hover #sheep17 {
-	animation: sheepmoveone 4s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 29s;
+	-webkit-animation-delay: 29s;
 }
 
 @keyframes sheepmoveone {
+	0% { right: -200px; top: -65px; z-index: 4;}
+	10% { top: -55px; z-index: 4; }
+	20% { top: -65px; z-index: 4; }
+	30% { top: -55px; z-index: 4; }
+	40% { top: -120px; z-index: 4;}
+	50% { top: -125px; z-index: 6; }
+	60% { top: -10px; z-index: 6; }
+	70% { top: -15px; z-index: 6; }
+	80% { top: -5px; z-index: 6; }
+	90% { top: -15px; z-index: 6; }
+	100% { right: 580px; top: -10px;}
+}
+
+@-webkit-keyframes sheepmoveone {
 	0% { right: -200px; top: -65px; z-index: 4;}
 	10% { top: -55px; z-index: 4; }
 	20% { top: -65px; z-index: 4; }
@@ -749,9 +805,17 @@ header h1 {
 	animation: finished 3s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 33s;
+	-webkit-animation: finished 3s linear;
+	-webkit-animation-fill-mode: forwards; 
+	-webkit-animation-delay: 33s;
 }
 
 @keyframes finished {
+	from {right: -350px;}
+	to {right: 130px;}
+}
+
+@-webkit-keyframes finished {
 	from {right: -350px;}
 	to {right: 130px;}
 }
@@ -863,9 +927,17 @@ header h1 {
 	animation: storylineheader 2s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 5s;
+	-webkit-animation: storylineheader 2s linear;
+	-webkit-animation-fill-mode: forwards; 
+	-webkit-animation-delay: 5s;
 }
 
 @keyframes storylineheader {
+	from { top: 150px; font-size: 2rem;}
+	to {top: -50px; font-size: 1.3rem;}
+}
+
+@-webkit-keyframes storylineheader {
 	from { top: 150px; font-size: 2rem;}
 	to {top: -50px; font-size: 1.3rem;}
 }
@@ -882,9 +954,17 @@ header h1 {
 	animation: homermove 7s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 5s;
+	-webkit-animation: homermove 7s linear;
+	-webkit-animation-fill-mode: forwards; 
+	-webkit-animation-delay: 5s;
 }
 
 @keyframes homermove {
+	from { left: -350px;}
+	to {left: 700px;}
+}
+
+@-webkit-keyframes homermove {
 	from { left: -350px;}
 	to {left: 700px;}
 }
@@ -902,9 +982,17 @@ header h1 {
 	animation: homerface 2s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 10s;
+	-webkit-animation: homerface 2s linear;
+	-webkit-animation-fill-mode: forwards; 
+	-webkit-animation-delay: 10s;
 }
 
 @keyframes homerface {
+	from { bottom: -100px;}
+	to {bottom: 0;}
+}
+
+@-webkit-keyframes homerface {
 	from { bottom: -100px;}
 	to {bottom: 0;}
 }
@@ -922,9 +1010,17 @@ header h1 {
 	animation: talkingbubble 2s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 12s;
+	-webkit-animation: talkingbubble 2s linear;
+	-webkit-animation-fill-mode: forwards; 
+	-webkit-animation-delay: 12s;
 }
 
 @keyframes talkingbubble {
+	from { opacity: 0;}
+	to {opacity: 1.0;}
+}
+
+@-webkit-keyframes talkingbubble {
 	from { opacity: 0;}
 	to {opacity: 1.0;}
 }
@@ -948,53 +1044,71 @@ header h1 {
 .story:hover #talkingbubble span {
 	animation: talkingbubbletext 2s linear;
 	animation-fill-mode: forwards; 
+	-webkit-animation: talkingbubbletext 2s linear;
+	-webkit-animation-fill-mode: forwards;
 }
 
 .story:hover #talkingbubble #text1 {
 	animation-delay: 17s;
+	-webkit-animation-delay: 17s;
 }
 
 .story:hover #talkingbubble #text2 {
 	animation-delay: 23s;
+	-webkit-animation-delay: 22s;
 }
 
 .story:hover #talkingbubble #text3 {
 	animation-delay: 29s;
+	-webkit-animation-delay: 29s;
 }
 
 .story:hover #talkingbubble #text4 {
 	animation-delay: 35s;
+	-webkit-animation-delay: 35s;
 }
 
 .story:hover #talkingbubble #text5 {
 	animation-delay: 41s;
+	-webkit-animation-delay: 41s;
 }
 
 .story:hover #talkingbubble #text6 {
 	animation-delay: 49s;
+	-webkit-animation-delay: 49s;
 }
 
 .story:hover #talkingbubble #text7 {
 	animation-delay: 55s;
+	-webkit-animation-delay: 55s;
 }
 
 .story:hover #talkingbubble #text8 {
 	animation-delay: 61s;
+	-webkit-animation-delay: 61s;
 }
 
 .story:hover #talkingbubble #text9 {
 	animation-delay: 67s;
+	-webkit-animation-delay: 67s;
 }
 
 .story:hover #talkingbubble #text10 {
 	animation-delay: 72s;
+	-webkit-animation-delay: 72s;
 }
 
 .story:hover #talkingbubble #text11 {
 	animation-delay: 100s;
+	-webkit-animation-delay: 100s;
 }
 
 @keyframes talkingbubbletext {
+	from { z-index: 2;}
+	to {z-index: -1;}
+}
+
+@-webkit-keyframes talkingbubbletext {
 	from { z-index: 2;}
 	to {z-index: -1;}
 }
@@ -1008,6 +1122,11 @@ header h1 {
 	opacity: 0;
 }
 
+.story:hover .slide  {
+	animation-fill-mode: forwards; 
+	-webkit-animation-fill-mode: forwards;
+}
+
 #slide1 {
 	height: 300px;
 	left: 100px;
@@ -1015,20 +1134,23 @@ header h1 {
 
 .story:hover #slide1  {
 	animation: slide 6s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 18s;
+	-webkit-animation: slide 6s linear;
+	-webkit-animation-delay: 18s;
 }
 
 .story:hover #slide2  {
 	animation: slide 10s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 24s;
+	-webkit-animation: slide 10s linear;
+	-webkit-animation-delay: 24s;
 }
 
 .story:hover #slide3  {
-	animation: slide 5s linear;
-	animation-fill-mode: forwards; 
+	animation: slide 5s linear; 
 	animation-delay: 36s;
+	-webkit-animation: slide 5s linear; 
+	-webkit-animation-delay: 36s;
 }
 
 .battery {
@@ -1039,7 +1161,6 @@ header h1 {
 	background: #ffffff;
 	width: 0px;
 	height: 100px;
-	float: left;
 	z-index: 10;
 }
 
@@ -1072,6 +1193,8 @@ header h1 {
 .story:hover .charging {
 	animation: charging 6s ease-in-out forwards;
 	animation-delay: 41s; 
+	-webkit-animation: charging 6s ease-in-out forwards;
+	-webkit-animation-delay: 41s;
 }
 
 @keyframes charging {
@@ -1079,22 +1202,30 @@ header h1 {
     to { width: 235px; background: #0f0; }
 }
 
+@-webkit-keyframes charging {
+    from { width: 0px; background: #f00; }
+    to { width: 235px; background: #0f0; }
+}
+
 .story:hover #slide4 {
 	animation: slide 8s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 41s;
+	-webkit-animation: slide 8s linear;
+	-webkit-animation-delay: 41s;
 }
 
 .story:hover #slide5  {
 	animation: slide 5s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 50s;
+	-webkit-animation: slide 5s linear;
+	-webkit-animation-delay: 50s;
 }
 
 .story:hover #slide6  {
 	animation: slide 5s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 56s;
+	-webkit-animation: slide 5s linear;
+	-webkit-animation-delay: 56s;
 }
 
 #slide7 {
@@ -1103,8 +1234,9 @@ header h1 {
 
 .story:hover #slide7  {
 	animation: slide 5s linear;
-	animation-fill-mode: forwards; 
 	animation-delay: 62s;
+	-webkit-animation: slide 5s linear;
+	-webkit-animation-delay: 62s;
 	transition: all 2s linear;
 	transition-delay: 62s;
 	height: 300px;
@@ -1114,7 +1246,6 @@ header h1 {
 #slide8 {
 	left: 20px;
 	width: 500px;
-	opacity: 0;
 }
 
 #slide8 div {
@@ -1130,12 +1261,20 @@ header h1 {
 }
 
 .story:hover #slide8  {
-	animation: slide 15s linear;
-	animation-fill-mode: forwards; 
+	animation: slide 15s linear; 
 	animation-delay: 67s;
+	-webkit-animation: slide 15s linear; 
+	-webkit-animation-delay: 67s;
 }
 
 @keyframes slide {
+	0% {opacity: 0;}
+	10% {opacity: 1;}
+	90% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@-webkit-keyframes slide {
 	0% {opacity: 0;}
 	10% {opacity: 1;}
 	90% {opacity: 1;}
