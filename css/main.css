@@ -803,14 +803,9 @@ header h1 {
 }
 
 .story:hover {
-	animation: backgroundchange 3s linear;
-	animation-fill-mode: forwards; 
-	animation-delay: 20s;
-}
-
-@keyframes backgroundchange {
-	from { background-color: white;}
-	to {background-color: black;}
+	transition: all 5s linear;
+	background-color: black;
+	transition-delay: 34s;
 }
 
 .story:hover .story-start {
@@ -872,7 +867,7 @@ header h1 {
 
 @keyframes storylineheader {
 	from { top: 150px; font-size: 2rem;}
-	to {top: 10px; font-size: 1.3rem; text-decoration: underline;}
+	to {top: -50px; font-size: 1.3rem;}
 }
 
 .homersleeping {
@@ -884,7 +879,7 @@ header h1 {
 }
 
 .story:hover .homersleeping {
-	animation: homermove 5s linear;
+	animation: homermove 7s linear;
 	animation-fill-mode: forwards; 
 	animation-delay: 5s;
 }
@@ -956,51 +951,193 @@ header h1 {
 }
 
 .story:hover #talkingbubble #text1 {
-	animation-delay: 18s;
+	animation-delay: 17s;
 }
 
 .story:hover #talkingbubble #text2 {
-	animation-delay: 21s;
+	animation-delay: 23s;
 }
 
 .story:hover #talkingbubble #text3 {
-	animation-delay: 221s;
+	animation-delay: 29s;
 }
 
 .story:hover #talkingbubble #text4 {
-	animation-delay: 230s;
+	animation-delay: 35s;
 }
 
 .story:hover #talkingbubble #text5 {
-	animation-delay: 250s;
+	animation-delay: 41s;
 }
 
 .story:hover #talkingbubble #text6 {
-	animation-delay: 270s;
+	animation-delay: 49s;
 }
 
 .story:hover #talkingbubble #text7 {
-	animation-delay: 290s;
+	animation-delay: 55s;
 }
 
 .story:hover #talkingbubble #text8 {
-	animation-delay: 310s;
+	animation-delay: 61s;
 }
 
 .story:hover #talkingbubble #text9 {
-	animation-delay: 330s;
+	animation-delay: 67s;
 }
 
 .story:hover #talkingbubble #text10 {
-	animation-delay: 350s;
+	animation-delay: 72s;
 }
 
 .story:hover #talkingbubble #text11 {
-	animation-delay: 370s;
+	animation-delay: 100s;
 }
-
 
 @keyframes talkingbubbletext {
 	from { z-index: 2;}
 	to {z-index: -1;}
+}
+
+.slide {
+	position: absolute;
+	height: 250px;
+	width: auto;
+	left: 50px;
+	top: 50px;
+	opacity: 0;
+}
+
+#slide1 {
+	height: 300px;
+	left: 100px;
+}
+
+.story:hover #slide1  {
+	animation: slide 6s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 18s;
+}
+
+.story:hover #slide2  {
+	animation: slide 10s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 24s;
+}
+
+.story:hover #slide3  {
+	animation: slide 5s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 36s;
+}
+
+.battery {
+  	position: relative;
+	display: block;
+	margin: 20px 65px;
+	margin-top: 30px;
+	background: #ffffff;
+	width: 0px;
+	height: 100px;
+	float: left;
+	z-index: 10;
+}
+
+.battery:before {
+	content: "";
+	display: block;
+	background: transparent;
+	border: 6px solid #ffffff;
+	margin: -12px;
+	width: 250px;
+	height: 110px;
+	position: absolute;
+	border-radius: 2px;
+	z-index:20;
+}
+
+.battery:after {
+	content: "";
+	display: block;
+	background: #ffffff;
+	border: 6px solid #ffffff;
+	margin: 20px 250px;
+	width: 20px;
+	height: 40px;
+	position: absolute;
+	border-radius: 2px;
+	z-index: 2;
+}
+
+.story:hover .charging {
+	animation: charging 6s ease-in-out forwards;
+	animation-delay: 41s; 
+}
+
+@keyframes charging {
+    from { width: 0px; background: #f00; }
+    to { width: 235px; background: #0f0; }
+}
+
+.story:hover #slide4 {
+	animation: slide 8s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 41s;
+}
+
+.story:hover #slide5  {
+	animation: slide 5s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 50s;
+}
+
+.story:hover #slide6  {
+	animation: slide 5s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 56s;
+}
+
+#slide7 {
+	left: 100px;
+}
+
+.story:hover #slide7  {
+	animation: slide 5s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 62s;
+	transition: all 2s linear;
+	transition-delay: 62s;
+	height: 300px;
+	width: 125px;
+}
+
+#slide8 {
+	left: 20px;
+	width: 500px;
+	opacity: 0;
+}
+
+#slide8 div {
+	width: 44%;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 5%;
+}
+
+#slide8 h4 {
+	font-size: 1.3rem;
+	text-decoration: underline;
+}
+
+.story:hover #slide8  {
+	animation: slide 15s linear;
+	animation-fill-mode: forwards; 
+	animation-delay: 67s;
+}
+
+@keyframes slide {
+	0% {opacity: 0;}
+	10% {opacity: 1;}
+	90% {opacity: 1;}
+	100% {opacity: 0;}
 }
